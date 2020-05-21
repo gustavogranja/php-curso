@@ -10,7 +10,7 @@ $pdo = ConnectionCreator::createConnection();
 $repository = new PdoStudentRepository($pdo);
 $studentList = $repository->allStudents();
 
-
+var_dump($studentList);
 
 
 
