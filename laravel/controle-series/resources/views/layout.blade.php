@@ -10,12 +10,24 @@
     <script src="https://kit.fontawesome.com/a422699895.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-    <div class="jumbotron">
-        <h1>@yield('cabecalho')</h1>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
+        @auth
+        <a href="{{route('listar_series')}}" class="navbar-brand">Home</a>
 
-    @yield('conteudo')
-</div>
+        <a href="/sair" class="text-danger">Sair</a>
+        @endauth
+
+        @guest
+                <a href="/entrar">Entrar</a>
+        @endguest
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>@yield('cabecalho')</h1>
+        </div>
+
+        @yield('conteudo')
+    </div>
 </body>
 </html>
